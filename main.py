@@ -9,7 +9,7 @@ import cv2
 
 
 @st.cache()
-def load_model(path='/home/staks/py/hck/models/best.pt'):
+def load_model(path='best.pt'):
 
     detection_model = torch.hub.load('ultralytics/yolov5', 'yolov5s')
     return detection_model
@@ -31,7 +31,7 @@ def detect_image(image, model):
 
 
 def process_video(cap, model, save=True, path_to_save='temp.mp4'):
-    
+
     frame_width = int(cap.get(3))
     frame_height = int(cap.get(4))
     stframe = st.empty()
@@ -46,12 +46,12 @@ def process_video(cap, model, save=True, path_to_save='temp.mp4'):
             break
         frame, pred = detect_image(frame, model)
         # st.write(pred)
-        if pred == 'crash' and pred == 'авария':
+        if pred != 'авария' and pred != 'нет аварии':
             if save:
                 out.write(frame)
             stframe.image(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
             preds.append(pred)
-        elif pred == 'нет аварии':
+        elif pred == 'авария':
             preds.append(pred)
     cap.release()
     if save:
