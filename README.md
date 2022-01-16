@@ -4,7 +4,7 @@
 https://github.com/ultralytics/yolov5, https://github.com/streamlit<br>
 Реализовано веб прилажение по обработке видео изображения и выявление на нем аварийных автомобилей. <br>
 Обучение Модели проходило на colab, разметка моделей производилась на roboflow.com:
-https://colab.research.google.com/drive/14qNeBCubT_Lw1OHL5xEjvkCLAIIADOjA?usp=sharing<br>
+https://colab.research.google.com/drive/1EoqwhsufB_7VkcShNqLTt-CZ9WFfeslw?usp=sharing<br>
 
 
 
