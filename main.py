@@ -31,7 +31,7 @@ def detect_image(image, model):
 
 
 def process_video(cap, model, save=True, path_to_save='temp.mp4'):
-    global out
+    
     frame_width = int(cap.get(3))
     frame_height = int(cap.get(4))
     stframe = st.empty()
